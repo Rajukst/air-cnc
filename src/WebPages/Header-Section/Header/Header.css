@@ -1,0 +1,29 @@
+
+.element-direction a{
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+.sign-up-button{
+    background: none;
+    border: none;
+    background-image: linear-gradient(GreenYellow, Green);
+    padding:  8px 20px;
+    border-radius: 30px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.element-direction{
+    align-items: center;
+    justify-content: center;
+}
+.right-side{
+    letter-spacing: 3px;
+    font-weight: 700;
+    font-size: 40px;
+    background: -webkit-linear-gradient(GreenYellow, ForestGreen);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

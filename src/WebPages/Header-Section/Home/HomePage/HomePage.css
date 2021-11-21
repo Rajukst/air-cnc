@@ -1,0 +1,12 @@
+/* 
+.divider-liner{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    
+} */
+.left{
+    border: 2px solid black;
+}
+.right{
+    border: 2px solid gray;
+}
