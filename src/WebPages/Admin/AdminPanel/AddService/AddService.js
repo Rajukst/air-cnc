@@ -1,11 +1,35 @@
-import { TextField } from "@mui/material";
-import React from "react";
+import React, { useRef } from "react";
 import { Button } from "react-bootstrap";
 import "./AddService.css";
 const AddService = () => {
+  const addName = useRef();
+  const addLocation = useRef();
+  const addPrice = useRef();
+  const addImage = useRef();
+
   const hanldeOnSubmit = (e) => {
-    alert("button clicked");
     e.preventDefault();
+    const name = addName.current.value;
+    const location = addLocation.current.value;
+    const price = addPrice.current.value;
+    const image = addImage.current.value;
+    const total = { name, location, price, image };
+    console.log(total);
+
+    e.target.reset();
+    fetch("http://localhost:5000/home-product", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(total),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedOne) {
+          alert("home Product added SuccessFully");
+        }
+      });
   };
   return (
     <>
@@ -15,34 +39,41 @@ const AddService = () => {
       <div className="service-form">
         <h2>This is Box element</h2>
         <form onSubmit={hanldeOnSubmit}>
-          <TextField
-            sx={{ width: "70%", m: 2 }}
-            id="standard-basic"
-            label="Service Name"
-            variant="standard"
-            required
+          <input
+            type="text"
+            name=""
+            id=""
+            ref={addName}
+            placeholder="Product Name"
           />
-          <TextField
-            sx={{ width: "70%", m: 2 }}
-            id="standard-basic"
-            label="Service Location"
-            variant="standard"
-            required
+          <br />
+          <br />
+          <input
+            type="text"
+            name=""
+            id=""
+            ref={addPrice}
+            placeholder="Product Price"
           />
-          <TextField
-            sx={{ width: "70%", m: 2 }}
-            id="standard-basic"
-            label="Order Price"
-            variant="standard"
-            required
+          <br />
+          <br />
+          <input
+            type="text"
+            name=""
+            id=""
+            ref={addLocation}
+            placeholder="Product Location"
           />
-          <TextField
-            sx={{ width: "70%", m: 2 }}
-            id="standard-basic"
-            label="Image URL"
-            variant="standard"
-            required
+          <br />
+          <br />
+          <input
+            type="text"
+            name=""
+            id=""
+            ref={addImage}
+            placeholder="Product Image or Url"
           />
+          <br />
           <br />
           <Button className="m-5" type="submit">
             Add

@@ -1,23 +1,25 @@
 import React from "react";
 import { Card, Col } from "react-bootstrap";
+import Rattings from "../../../Shared/Rattings/Rattings";
 
-const Product = () => {
+const Product = ({ myProduct }) => {
+  const { name, location, price, image } = myProduct;
   return (
-    <div>
+    <>
       <Col>
         <Card>
-          <Card.Img variant="top" src="holder.js/100px160" />
+          <Card.Img variant="top" src={image} />
           <Card.Body>
-            <Card.Title>Card title</Card.Title>
-            <Card.Text>
-              This is a longer card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </Card.Text>
+            <h4 align="left">{location}</h4>
+            <h3 align="left">{name}</h3>
+            <h5 align="left">${price} per person</h5>
+            <div align="left">
+              <Rattings></Rattings>
+            </div>
           </Card.Body>
         </Card>
       </Col>
-    </div>
+    </>
   );
 };
 

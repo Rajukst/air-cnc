@@ -1,0 +1,18 @@
+.location-bar{
+    box-shadow: 1px 3px 8px 1px #808080;
+    padding: 10px;
+    border-radius: 10px;
+}
+.disable{
+    color: rgba(160, 158, 158, 0.473);
+}
+.calender-items{
+    margin-top: 20px;
+    box-shadow: 1px 3px 8px 1px #808080;
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+}
+.my-calender{
+    color: rgba(145, 141, 141, 0.527);
+}
